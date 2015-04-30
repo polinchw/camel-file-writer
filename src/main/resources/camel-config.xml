@@ -19,9 +19,12 @@
 			<!-- incoming requests from the servlet is routed -->
 			<from uri="servlet:///hello" />
 			<setBody>
-               <simple>${header.name}</simple>
-            </setBody>
+				<simple>${header.name}</simple>
+			</setBody>
 			<to uri="file:outdir" />
+			<setBody>
+				<simple>${header.name} successfully written to file.</simple>
+			</setBody>
 		</route>
 
 	</camelContext>
