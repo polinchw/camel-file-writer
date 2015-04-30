@@ -19,11 +19,11 @@
 			<!-- incoming requests from the servlet is routed -->
 			<from uri="servlet:///hello" />
 			<setBody>
-				<simple>${header.name}</simple>
+				<simple>${header.name}\n</simple>
 			</setBody>
-			<to uri="file:outdir" />
+			<to uri="file:outdir?fileName=names.txt&amp;fileExist=Append" />
 			<setBody>
-				<simple>${header.name} successfully written to file.</simple>
+				<simple>${header.name} successfully appended to file names.txt.</simple>
 			</setBody>
 		</route>
 
